@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header class="l-header">
+      <nav class="l-nav">
+        <div class="l-nav__logo">
+          <h1><a href="">Project GRID</a></h1>
+        </div>
+        <div class="l-nav__links">
+          <div class="l-nav__desktop">
+            <ul>
+              <li>
+                <a href="">Home</a>
+                <a href="">About</a>
+                <a href="">Team</a>
+                <a href="">Contact</a>
+              </li>
+            </ul>
+          </div>
+          <div class="l-nav__mobile">
+            <span class="t" onclick="openNav()">&#9776;</span>
+            <div id="mySidenav" class="sidenav">
+              <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+                >&times;</a
+              >
+              <a href="#">Home</a>
+              <a href="#">About</a>
+              <a href="#">Team</a>
+              <a href="#">Contact</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="l-main">
+    
+      <div class="wrapper">
+        <div class="row wrapper">
+          <div class="left">
+            <h1>Welcome</h1>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis quidem aut in accusamus distinctio labore earum! Quos earum molestias, in corporis voluptatum nam cum facere ea! Repellendus, quia provident laboriosam harum praesentium accusamus incidunt in voluptatum. Delectus voluptatem iure rerum.</p>
+          </div>
+
+          <div class="right">
+            <div class="card">
+              <p>Unicorn</p>
+              <img src="./img/unicorn.svg" alt="unicorn">
+                <p>since 2021</p>
+            </div>
+          </div>
+        </div> 
+      </div>
+    </main>
+    <footer class="l-footer">
+    <div class="l-footer__text">
+      <p>Project grid responsive and GlassMorphphism</p>  
+  </div>
+    </footer>
+  </body>
+
+  <script>
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "100%";
+    }
+
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+    }
+  </script>
+</html>
+  </script>
+</html>

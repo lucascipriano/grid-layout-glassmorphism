@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  font-family: Roboto;
+}
+
+.wrapper {
+  height: 100vh;
+  text-align: center;
+  padding: 2.5rem;
+}
+
+@media (min-width: 980px) {
+  /*640px pra cima*/
+  body {
+    background-color: purple;
+    display: grid;
+    grid-template-areas:
+      "header header header"
+      ". main ."
+      "footer footer footer";
+    grid-template-columns: auto 1200px auto;
+    /*    grid-template-rows: 7vh 2fr 7vh; */
+  }
+  .wrapper {
+    text-align: center;
+    padding: 2.5rem;
+  }
+  .l-header {
+    display: grid;
+  }
+
+  .l-header .l-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: purple;
+  }
+
+  .l-header .l-nav__mobile {
+    display: none;
+  }
+  .l-footer {
+    display: grid;
+  }
+}
+
+.l-nav .random {
+  background-color: #fff;
+  display: none;
+}
+.l-header {
+  grid-area: header;
+  background-color: pink;
+  grid-template-columns: 1200px;
+  justify-content: center;
+  height: 7vh;
+}
+
+.l-header nav li {
+  list-style: none;
+}
+
+.l-header nav li a {
+  text-decoration: none;
+}
+.l-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.l-main {
+  grid-area: main;
+  background-color: red;
+}
+
+.l-footer {
+  grid-area: footer;
+  background-color: green;
+  grid-template-columns: 1200px;
+  justify-content: center;
+  height: 7vh;
+}
+
+.sidenav {
+  text-align: center;
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 10px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+  background-color: #818181;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}

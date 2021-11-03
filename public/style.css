@@ -1,0 +1,253 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Roboto;
+  /*background: linear-gradient(90deg, #17334a 0%, #275a80 85.5%);*/
+  background-image: url(./img/wallpaper.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+.wrapper {
+  height: 100vh;
+  text-align: center;
+  padding: 2.5rem;
+}
+
+.l-header {
+  grid-area: header;
+  background-color: pink;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.l-header nav li {
+  list-style: none;
+}
+
+.l-header nav li a {
+  text-decoration: none;
+}
+.l-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  padding: 10px;
+}
+.l-nav .l-nav__logo h1 a {
+  text-decoration: none;
+  font-weight: 400;
+  color: white;
+}
+
+.l-main {
+  grid-area: main;
+}
+
+.l-footer {
+  grid-area: footer;
+  grid-template-columns: 1200px;
+  justify-content: center;
+  height: 7vh;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4.5px);
+  -webkit-backdrop-filter: blur(4.5px);
+  border-radius: 10px;
+}
+.l-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.right {
+  display: flex;
+  justify-content: center;
+}
+.row {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+}
+
+.card {
+  position: absolute;
+  width: 250px;
+  height: 350px;
+  top: 337px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
+}
+.card img {
+  width: 100px;
+}
+
+@media (min-width: 980px) {
+  /*980px pra cima*/
+  body {
+    display: grid;
+    grid-template-areas:
+      "header header header"
+      ". main ."
+      "footer footer footer";
+    grid-template-columns: auto 1200px auto;
+  }
+  .wrapper {
+    text-align: center;
+    padding: 2.5rem;
+  }
+  .l-header {
+    display: grid;
+  }
+
+  .l-header .l-nav {
+    display: flex;
+    width: 100vw;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .l-nav .l-nav__links a {
+    color: white;
+    width: 100%;
+    margin: 10px;
+    padding-top: 30px;
+    padding-bottom: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .l-nav .l-nav__links a:hover {
+    background-color: #818181;
+
+    transition: 1s;
+  }
+
+  .l-header .l-nav__mobile {
+    display: none;
+  }
+
+  .row {
+    display: grid;
+    align-content: center;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 40px 100px 40px;
+    height: 60%;
+    position: relative;
+  }
+
+  .left {
+    height: 30vh;
+    grid-column: span 6;
+  }
+
+  .right {
+    height: 100%;
+    grid-column: span 6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .card {
+    position: absolute;
+    width: 250px;
+    height: 350px;
+    top: 113px;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(20px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+  }
+  .l-footer {
+    display: grid;
+  }
+}
+
+/*Por algum motivo, só assim consegui remover o menu no mobile*/
+@media (max-width: 980px) {
+  .l-nav__desktop {
+    display: none;
+  }
+}
+
+/* MENU MOBILE  */
+.sidenav {
+  text-align: center;
+  height: 100vh;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.sidenav a {
+  padding: 10px;
+  text-decoration: none;
+  font-size: 25px;
+  color: black;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: black;
+  background-color: rgba(0, 212, 255, 0.2);
+}
+.l-nav__mobile .t {
+  font-size: 2rem;
+  color: white;
+}
+.sidenav .closebtn {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  font-size: 36px;
+}
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
+}
+
+/*Ajuste do card em resoluções pequenas*/
+
+@media (max-width: 500px) {
+  .card {
+    top: 450px;
+  }
+}
+
+@media (max-width: 450px) {
+  .card {
+    top: 400px;
+  }
+}
+
+@media (max-width: 400px) {
+  .card {
+    top: 450px;
+  }
+}
